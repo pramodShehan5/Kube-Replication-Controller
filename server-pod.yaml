@@ -1,19 +1,10 @@
-apiVersion: extensions/v1beta1
+apiVersion: v1
 kind: Pod
 metadata:
   name: server
-  labels:
-    app: server
 spec:
-  template:
-    metadata:
-      labels:
-        app: server
-    spec:
-      containers:
-      - image: pramodshehan/nodes:1.0
-        name: server
-        imagePullPolicy: IfNotPresent
-        ports:
-         - name: http
-           containerPort: 8080
+  containers:
+  - name: server
+    image: pramodshehan/nodes:1.0
+    ports:
+    - containerPort: 8080
